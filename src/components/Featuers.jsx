@@ -53,12 +53,12 @@ const Featuers = () => {
         Exclusive Products
       </h1>
 
-      <div className="flex flex-wrap justify-center gap-5 pt-8">
+      <div  className="flex flex-wrap justify-center gap-5 pt-8">
         {data.map((item) => (
           <div className="md:w-2/3 lg:w-1/4">
             <ProductCard
-              id={item.id}
               key={item.id}
+              id={item.id}
               img={item.img}
               name={item.name}
               price={item.price}

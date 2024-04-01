@@ -1,5 +1,6 @@
 import React from "react";
 import img from "../assets/img/hero.png";
+import { Link } from "react-scroll";
 
 const Home = () => {
   return (
@@ -13,8 +14,8 @@ const Home = () => {
           fashion but a reflection of your unique style.
         </p>
 
-        <button className="bg-ExtraDarkColor text-white px-4 py-2 font-medium active:bg-amber-800 rounded-lg">
-          shop now
+        <button className="bg-ExtraDarkColor text-white  px-4 py-2 font-medium active:bg-amber-800 rounded-lg">
+          <Link to="shop">shop now</Link>
         </button>
       </div>
 

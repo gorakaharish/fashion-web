@@ -1,7 +1,25 @@
 import React from "react";
 import { FaStar } from "react-icons/fa";
+import { useAppDispatch } from "../redux/hooks";
+import toast from "react-hot-toast";
+import { addToCar } from "../redux/features/CartSlick";
 
 const ProductCard = ({ id, img, name, price, discount }) => {
+
+  const dispatch = useAppDispatch();
+
+  const addProductCart = () => {
+    const payload = {
+      id,
+      img,
+      name,
+      price: parseInt(price),
+      quantity: 1
+    }
+    dispatch(addToCar(payload))
+    toast.success("Add to cart successfully")
+  }
+
   return (
     <div
       className="h-[370px] 2xl:h-[420px] text-black rounded-xl shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] mb-2 cursor-pointer"
@@ -22,7 +40,9 @@ const ProductCard = ({ id, img, name, price, discount }) => {
         </div>
 
         <div className="flex gap-8 pt-4">
-          <button className="bg-ExtraDarkColor text-white px-4 py-2 font-medium active:bg-amber-800">
+          <button className="bg-ExtraDarkColor text-white px-4 py-2 font-medium active:bg-amber-800"
+           onClick={addProductCart}
+          >
             Add to Cart
           </button>
           <div className="flex gap-1 items-center">

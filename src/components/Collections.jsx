@@ -1,5 +1,6 @@
 import React from "react";
 import img from "../assets/img/collection.png";
+import { Link } from "react-scroll";
 
 const Collections = () => {
   return (
@@ -24,7 +25,7 @@ const Collections = () => {
         </p>
 
         <button className="bg-ExtraDarkColor px-4 py-2 font-medium text-white rounded-xl active:bg-amber-800">
-          Shop Now
+          <Link to="features">Shop Now</Link>
         </button>
       </div>
     </div>
